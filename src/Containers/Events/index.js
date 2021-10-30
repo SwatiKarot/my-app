@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import EventList from "../../Components/EventList";
+import { Button } from 'react-bootstrap';
+import history from '../../history';
 
 class Events extends Component{
     state = {
@@ -34,6 +36,7 @@ class Events extends Component{
         <div>
             <input type ="text" onChange={this.onEventInputChange} />
             <button onClick={this.sayHello}>Search</button>
+           
         </div>
         <EventList List = {this.state.events} />
         </div>
