@@ -2,12 +2,18 @@ import React, { Component } from "react";
 import EventList from "../../Components/EventList";
 import { Button } from 'react-bootstrap';
 import history from '../../history';
+import track from 'react-tracking';
+
+
 
 class Events extends Component{
     state = {
         events: []
       }
     
+      // @track({
+      //   page: 'event listing',
+      // })
       componentDidMount(){
         // fetch('https://api.tvmaze.com/search/shows?q=Vikings')
         // .then(response => response.json())
@@ -17,6 +23,9 @@ class Events extends Component{
         //   this.setState({events})
         // }, 3000);
       }
+      // @track({
+      //   event: 'user typing',
+      // })
       onEventInputChange = e => {
           
 
@@ -25,7 +34,11 @@ class Events extends Component{
         .then(json => this.setState({ events: json})) 
           console.log(e)
           console.log(e.target.value)
-      }
+      };
+      
+      // @track({
+      //   event: 'search button clicked',
+      // })
       sayHello() {
         alert('You clicked me!');
       }
