@@ -24,12 +24,16 @@ class Events extends Component{
           console.log(e)
           console.log(e.target.value)
       }
+      sayHello() {
+        alert('You clicked me!');
+      }
 
     render(){
     return (
         <div>The Length of events is: {this.state.events.length}
         <div>
             <input type ="text" onChange={this.onEventInputChange} />
+            <button onClick={this.sayHello}>Search</button>
         </div>
         <EventList List = {this.state.events} />
         </div>
